@@ -45,14 +45,14 @@ class Header extends React.Component {
                 <li><Link to="/account" style={{ textDecoration: 'none' }}><span>My Account</span></Link></li>
                 <li>
                   <Link
-                    to="http:/www.google.com"
+                    to="#"
                     style={{ textDecoration: 'none' }}
                   >
                     <span>Messages</span>
                   </Link>
                 </li>
                 <li>
-                  <Link to="http:/www.google.com" style={{ textDecoration: 'none' }}><span>Affiliate Dashboard</span></Link>
+                  <Link to="#" style={{ textDecoration: 'none' }}><span>Affiliate Dashboard</span></Link>
                 </li>
                 <li><span onClick={this.logOut}>Logout</span></li>
               </ul>
@@ -83,12 +83,13 @@ class Header extends React.Component {
         <div className={styles.headerContainer}>
           <div className={styles.fixedHeader}>
             <span className={styles.info}>Squadhelp recognized as one of the Most Innovative Companies by Inc Magazine.</span>
-            <a href="http://www.google.com">Read Announcement</a>
+            <p>Read Announcement</p>
           </div>
           <div className={styles.loginSignnUpHeaders}>
             <div className={styles.numberContainer}>
               <img src={`${CONSTANTS.STATIC_IMAGES_PATH}phone.png`} alt="phone" />
-              <span>(877)&nbsp;355-3585</span>
+              <span><a href='tel:+8773553585'>(877)&nbsp;355-3585 </a></span>
+              
             </div>
             <div className={styles.userButtonsContainer}>
               {this.renderLoginButtons()}
@@ -106,15 +107,15 @@ class Header extends React.Component {
                       alt="menu"
                     />
                     <ul>
-                      <li><a href="http://www.google.com">Beauty</a></li>
-                      <li><a href="http://www.google.com">Consulting</a></li>
-                      <li><a href="http://www.google.com">E-Commerce</a></li>
-                      <li><a href="http://www.google.com">Fashion & Clothing</a></li>
-                      <li><a href="http://www.google.com">Finance</a></li>
-                      <li><a href="http://www.google.com">Real Estate</a></li>
-                      <li><a href="http://www.google.com">Tech</a></li>
+                      <li><p>Beauty</p></li>
+                      <li><p>Consulting</p></li>
+                      <li><p>E-Commerce</p></li>
+                      <li><p>Fashion & Clothing</p></li>
+                      <li><p>Finance</p></li>
+                      <li><p>Real Estate</p></li>
+                      <li><p>Tech</p></li>
                       <li className={styles.last}>
-                        <a href="http://www.google.com">More Categories</a>
+                        <p>More Categories</p>
                       </li>
                     </ul>
                   </li>
@@ -125,17 +126,17 @@ class Header extends React.Component {
                       alt="menu"
                     />
                     <ul>
-                      <li><a href="http://www.google.com">HOW IT WORKS</a></li>
-                      <li><a href="http://www.google.com">PRICING</a></li>
-                      <li><a href="http://www.google.com">AGENCY SERVICE</a></li>
-                      <li><a href="http://www.google.com">ACTIVE CONTESTS</a></li>
-                      <li><a href="http://www.google.com">WINNERS</a></li>
-                      <li><a href="http://www.google.com">LEADERBOARD</a></li>
+                      <li><p>HOW IT WORKS</p></li>
+                      <li><p>PRICING</p></li>
+                      <li><p>AGENCY SERVICE</p></li>
+                      <li><p>ACTIVE CONTESTS</p></li>
+                      <li><p>WINNERS</p></li>
+                      <li><p>LEADERBOARD</p></li>
                       <li className={styles.last}>
-                        <a href="http://www.google.com">
+                        <p>
                             BECOME A
                             CREATIVE
-</a>
+</p>
                       </li>
                     </ul>
                   </li>
@@ -146,11 +147,11 @@ class Header extends React.Component {
                       alt="menu"
                     />
                     <ul>
-                      <li><a href="http://www.google.com">NAMES</a></li>
-                      <li><a href="http://www.google.com">TAGLINES</a></li>
-                      <li><a href="http://www.google.com">LOGOS</a></li>
+                      <li><p>NAMES</p></li>
+                      <li><p>TAGLINES</p></li>
+                      <li><p>LOGOS</p></li>
                       <li className={styles.last}>
-                        <a href="http://www.google.com">TESTIMONIALS</a>
+                        <p href="#">TESTIMONIALS</p>
                       </li>
                     </ul>
                   </li>
@@ -158,16 +159,16 @@ class Header extends React.Component {
                     <span>Names For Sale</span>
                     <img src={`${CONSTANTS.STATIC_IMAGES_PATH}menu-down.png`} alt="menu" />
                     <ul>
-                      <li><a href="http://www.google.com">POPULAR NAMES</a></li>
-                      <li><a href="http://www.google.com">SHORT NAMES</a></li>
-                      <li><a href="http://www.google.com">INTRIGUING NAMES</a></li>
-                      <li><a href="http://www.google.com">NAMES BY CATEGORY</a></li>
-                      <li><a href="http://www.google.com">VISUAL NAME SEARCH</a></li>
+                      <li><p>POPULAR NAMES</p></li>
+                      <li><p>SHORT NAMES</p></li>
+                      <li><p>INTRIGUING NAMES</p></li>
+                      <li><p>NAMES BY CATEGORY</p></li>
+                      <li><p>VISUAL NAME SEARCH</p></li>
                       <li className={styles.last}>
-                        <a href="http://www.google.com">
+                        <p href="#">
                             SELL YOUR
                             DOMAINS
-</a>
+</p>
                       </li>
                     </ul>
                   </li>
@@ -178,11 +179,11 @@ class Header extends React.Component {
                       alt="menu"
                     />
                     <ul>
-                      <li><a href="http://www.google.com">ULTIMATE NAMING GUIDE</a></li>
-                      <li><a href="http://www.google.com">POETIC DEVICES IN BUSINESS NAMING</a></li>
-                      <li><a href="http://www.google.com">CROWDED BAR THEORY</a></li>
+                      <li><p>ULTIMATE NAMING GUIDE</p></li>
+                      <li><p>POETIC DEVICES IN BUSINESS NAMING</p></li>
+                      <li><p>CROWDED BAR THEORY</p></li>
                       <li className={styles.last}>
-                        <a href="http://www.google.com">ALL ARTICLES</a>
+                        <p>ALL ARTICLES</p>
                       </li>
                     </ul>
                   </li>

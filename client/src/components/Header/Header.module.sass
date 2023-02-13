@@ -108,13 +108,14 @@
                 &:hover
                   background: #f9fafb
 
-                a
+                p
                   font-size: 12px
                   text-decoration: none
                   color: #333
 
                   &:hover
                     color: #f27e51
+                    cursor: pointer
 
             span
               color: #495d8b
@@ -221,11 +222,13 @@
         margin-left: 0
 
       span
-        color: #337ab7
         font-size: 14px
         margin-left: 10px
         @media(max-width: 360px)
           font-size: 12px
+        a 
+          text-decoration: none
+          color: #337ab7
 
   .fixedHeader
     z-index: 500
@@ -246,7 +249,7 @@
       @media(max-width: 600px)
         display: none
 
-    a
+    p
       font-size: 8pt
       letter-spacing: 0.3px
       color: lightyellow
