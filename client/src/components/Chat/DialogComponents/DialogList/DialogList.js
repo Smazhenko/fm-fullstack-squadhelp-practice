@@ -42,8 +42,7 @@ const DialogList = (props) => {
   const renderPreview = (filterFunc) => {
     const arrayList = [];
     const {
-      userId, preview, goToExpandedDialog, chatMode, removeChat, interlocutor,
-    } = props;
+      userId, preview, goToExpandedDialog, chatMode, removeChat} = props;
     preview.forEach((chatPreview, index) => {
       const dialogNode = (
         <DialogBox

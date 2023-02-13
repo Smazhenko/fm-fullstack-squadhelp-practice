@@ -37,6 +37,7 @@ module.exports.dataForContest = async (req, res, next) => {
 };
 
 module.exports.getContestById = async (req, res, next) => {
+  console.log( 'DFDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD' ,req.tokenData.userId)
   try {
     let contestInfo = await db.Contest.findOne({
       where: { id: req.headers.contestid },
@@ -93,8 +94,10 @@ module.exports.getContestById = async (req, res, next) => {
       }
       delete offer.Rating;
     });
+    console.log(contestInfo)
     res.send(contestInfo);
   } catch (e) {
+    console.log('EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE', e)
     next(new ServerError());
   }
 };

@@ -6,6 +6,10 @@ module.exports = (sequelize, DataTypes) => {
       Offer.belongsTo(models.User, { foreignKey: 'userId', sourceKey: 'id' });
       Offer.belongsTo(models.Contest,
         { foreignKey: 'contestId', sourceKey: 'id' });
+        Offer.hasOne(models.Rating, {
+          foreignKey: 'offerId',
+          targetKey: 'id',
+        });
     }
   }
   Offer.init({

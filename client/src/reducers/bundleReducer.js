@@ -3,8 +3,7 @@ import ACTION from '../actions/actionTypes';
 const initialState = {
   bundle: null,
 };
-
-export default function (state = initialState, action) {
+const bundleReducer = function (state = initialState, action) {
   switch (action.type) {
     case ACTION.SELECT_BUNDLE_ACTION: {
       return {
@@ -20,3 +19,4 @@ export default function (state = initialState, action) {
       return state;
   }
 }
+export default bundleReducer;

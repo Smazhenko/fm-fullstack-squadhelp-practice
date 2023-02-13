@@ -6,6 +6,7 @@ import NameContestSpecialInfo from './NameContestSpecialInfo';
 import TaglineContestSpecialInfo from './TaglineContestSpecialInfo';
 
 const ContestInfo = (props) => {
+  console.log(props)
   const {
     changeEditContest, userId, contestData, role, goChat,
   } = props;
