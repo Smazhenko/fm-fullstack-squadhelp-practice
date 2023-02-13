@@ -12,10 +12,10 @@ import Spinner from '../../components/Spinner/Spinner';
 const Home = (props) => {
   const [index, setIndex] = useState(0);
   const [styleName, setStyle] = useState(styles.headline__static);
-  let timeout;
+ 
 
   useEffect(() => {
-    timeout = setInterval(() => {
+   const  timeout = setInterval(() => {
       setIndex(index + 1);
       setStyle(styles.headline__isloading);
     }, 3000);
@@ -44,9 +44,9 @@ const Home = (props) => {
                 Or, explore our hand-picked collection of premium names
                 available for immediate purchase
               </p>
-              <div className={styles.button}>
-                <Link className={styles.button__link} to="/dashboard">DASHBOARD</Link>
-              </div>
+                  <div className={styles.button}>
+                <Link className={styles.button__link} to={props.data ? "/dashboard" : "/login"}>DASHBOARD</Link> 
+                </div>
             </div>
             <div className={styles.greyContainer}>
               <SlideBar
@@ -203,9 +203,9 @@ const Home = (props) => {
               images={carouselConstants.exampleSliderImages}
               carouselType={carouselConstants.EXAMPLE_SLIDER}
             />
-            <div className={styles.button}>
-              <Link className={styles.button__link} to="/dashboard">DASHBOARD</Link>
-            </div>
+                  <div className={styles.button}>
+                <Link className={styles.button__link} to={props.data ? "/dashboard" : "/login"}>DASHBOARD</Link> 
+                </div>
             <div className={styles.blueContainer}>
               <h2 className={styles.whiteUnderline}>What our customers say</h2>
               <SlideBar
@@ -222,8 +222,8 @@ const Home = (props) => {
 };
 
 const mapStateToProps = (state) => {
-  const { isFetching } = state.userStore;
-  return { isFetching };
+  const { isFetching, data } = state.userStore;
+  return { isFetching, data };
 };
 
 export default connect(mapStateToProps, null)(Home);
