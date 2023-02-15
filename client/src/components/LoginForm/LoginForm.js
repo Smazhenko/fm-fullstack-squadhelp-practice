@@ -58,6 +58,7 @@ class LoginForm extends React.Component {
                 name="password"
                 type="password"
                 label="Password"
+                autoComplete="off"
               />
               <button
                 type="submit"

@@ -98,6 +98,7 @@ class RegistrationForm extends React.Component {
                   classes={formInputClasses}
                   type="text"
                   label="Email Address"
+                  autoComplete="username"
                 />
               </div>
               <div className={styles.row}>
@@ -106,12 +107,14 @@ class RegistrationForm extends React.Component {
                   classes={formInputClasses}
                   type="password"
                   label="Password"
+                  autoComplete="new-password"   
                 />
                 <FormInput
                   name="confirmPassword"
                   classes={formInputClasses}
                   type="password"
                   label="Password confirmation"
+                  autoComplete="new-password"   
                 />
               </div>
               <div className={styles.choseRoleContainer}>
