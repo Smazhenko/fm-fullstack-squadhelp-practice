@@ -14,6 +14,10 @@ const UpdateUserInfoForm = (props) => {
   } = props;
   return (
     <Formik onSubmit={onSubmit} initialValues={props.initialValues} validationSchema={Schems.UpdateUserSchema}>
+      {formikProps =>(
+
+        
+      
       <Form className={styles.updateContainer}>
         {error && <Error data={error.data} status={error.status} clearError={clearUserError} />}
         <div className={styles.container}>
@@ -59,17 +63,21 @@ const UpdateUserInfoForm = (props) => {
           />
         </div>
         <ImageUpload
+          type="file"
           name="file"
           classes={{
             uploadContainer: styles.imageUploadContainer,
+            imgErr: styles.imgErr,
             inputContainer: styles.uploadInputContainer,
             imgStyle: styles.imgStyle,
           }}
+          formikProps={formikProps}
         />
         <button type="submit" disabled={submitting}>
           Submit
         </button>
       </Form>
+      )}
     </Formik>
   );
 };
