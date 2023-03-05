@@ -82,6 +82,7 @@ class ContestForm extends React.Component {
               innerRef={this.props.formRef}
               enableReinitialize
             >
+              {formikProps => (
               <Form>
                 <div className={styles.inputContainer}>
                   <span className={styles.inputHeader}>Title of contest</span>
@@ -141,6 +142,7 @@ class ContestForm extends React.Component {
                 </div>
                 <OptionalSelects {...this.props} />
                 <FieldFileInput
+                 formikProps={formikProps}
                   name="file"
                   classes={{
                     fileUploadContainer: styles.fileUploadContainer,
@@ -154,6 +156,7 @@ class ContestForm extends React.Component {
                 {this.props.isEditContest
                   ? <button type="submit" className={styles.changeData}>Set Data</button> : null}
               </Form>
+              )}
             </Formik>
           </div>
         </>

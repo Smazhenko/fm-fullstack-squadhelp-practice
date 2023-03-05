@@ -31,13 +31,11 @@ module.exports.dataForContest = async (req, res, next) => {
     });
     res.send(response);
   } catch (err) {
-    console.log(err);
     next(new ServerError('cannot get contest preferences'));
   }
 };
 
 module.exports.getContestById = async (req, res, next) => {
-  console.log( 'DFDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD' ,req.tokenData.userId)
   try {
     let contestInfo = await db.Contest.findOne({
       where: { id: req.headers.contestid },
@@ -94,10 +92,8 @@ module.exports.getContestById = async (req, res, next) => {
       }
       delete offer.Rating;
     });
-    console.log(contestInfo)
     res.send(contestInfo);
   } catch (e) {
-    console.log('EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE', e)
     next(new ServerError());
   }
 };
@@ -140,7 +136,7 @@ module.exports.setNewOffer = async (req, res, next) => {
     delete result.contestId;
     delete result.userId;
     controller.getNotificationController().emitEntryCreated(
-      req.body.customerId);
+     Number(req.body.customerId));
     const User = Object.assign({}, req.tokenData, { id: req.tokenData.userId });
     res.send(Object.assign({}, result, { User }));
   } catch (e) {

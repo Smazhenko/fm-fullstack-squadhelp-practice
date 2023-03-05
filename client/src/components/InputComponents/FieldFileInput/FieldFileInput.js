@@ -1,7 +1,7 @@
 import React from 'react';
 import { Field } from 'formik';
 
-const FieldFileInput = ({ classes, ...rest }) => {
+const FieldFileInput = ({ classes,formikProps, ...rest }) => {
   const {
     fileUploadContainer, labelClass, fileNameClass, fileInput,
   } = classes;
@@ -29,10 +29,11 @@ const FieldFileInput = ({ classes, ...rest }) => {
               {getFileName()}
             </span>
             <input
-              {...field}
+            onChange={element=>formikProps.setFieldValue(field.name, element.target.files[0])}
               className={fileInput}
               id="fileInput"
               type="file"
+              name={field.name}
             />
           </div>
         );

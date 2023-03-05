@@ -4,7 +4,7 @@ module.exports = {
       {
         cardNumber: '4564654564564564',
         name: 'SquadHelp',
-        expiry: '11/22',
+        expiry: '11/23',
         cvc: '453',
         balance: 0,
       },
