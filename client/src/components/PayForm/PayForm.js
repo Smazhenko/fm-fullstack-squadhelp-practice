@@ -115,7 +115,7 @@ const PayForm = (props) => {
                     <span>* Security Code</span>
                     <PayInput
                         isInputMask
-                        mask="9999"
+                        mask="999"
                         name="cvc"
                         classes={{
                             container: styles.inputContainer,
