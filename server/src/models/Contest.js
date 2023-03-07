@@ -8,12 +8,6 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Contest.init({
-    id: {
-      allowNull: false,
-      autoIncrement: true,
-      primaryKey: true,
-      type: DataTypes.INTEGER,
-    },
     orderId: {
       allowNull: false,
       type: DataTypes.STRING,
@@ -22,7 +16,7 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
       type: DataTypes.INTEGER,
       references: {
-        model: 'Users',
+        model: 'User',
         key: 'id',
       },
     },
@@ -94,7 +88,7 @@ module.exports = (sequelize, DataTypes) => {
   {
     sequelize,
     modelName:'Contest',
-    tableName: 'Contests',
+    tableName: 'contests',
     timestamps: false,
   });
 
