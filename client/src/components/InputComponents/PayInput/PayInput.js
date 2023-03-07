@@ -39,7 +39,7 @@ const PayInput = (props) => {
         />
         {(touched && error) && (
         <span className={classes.error}>
-          {error.message}
+          {error}
           !
         </span>
         )}
@@ -56,7 +56,7 @@ const PayInput = (props) => {
       />
       {(touched && error) && (
       <span className={classes.error}>
-        {error.message}
+        {error}
         !
       </span>
       )}

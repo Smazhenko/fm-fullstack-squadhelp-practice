@@ -26,7 +26,7 @@ const PayForm = (props) => {
           focusOnElement: '', name: '', number: '', cvc: '', expiry: '',
         }}
         onSubmit={pay}
-        validationSchema={Schems.PaymentSchema}
+        validationSchema={isPayForOrder ? Schems.PaymentSchema : Schems.CashoutSchema}
       >
         {({ values }) => {
           const {

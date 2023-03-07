@@ -48,11 +48,11 @@ const validationSchems ={
     expiry: yup.string().test('test-expiry', 'expiry is invalid', (value) => valid.expirationDate(value).isValid).required('required')
   }),
   CashoutSchema: yup.object().shape({
-    sum: yup.number().min(5, 'min sum is 5$').required('required'),
-    number: yup.string().test('test-cardNumber', 'Credit Card number is invalid', (value) => valid.number(value).isValid).required('required'),
+    sum: yup.number().min(5, 'min sum is 5$').typeError('must be a number').required('required'),
+    number: yup.string().test('test-cardNumber', 'Credit Card number is invalid', (value) => valid.number(value,{type:'visa'})).required('required'),
     name: yup.string().min(1).required('required'),
     cvc: yup.string().test('test-cvc', 'cvc is invalid', (value) => valid.cvv(value).isValid).required('required'),
-    expiry: yup.string().test('test-expiry', 'expiry is invalid', (value) => valid.expirationDate(value).isValid).required('required')
+    expiry: yup.string().test('test-expiry', 'expiry is invalid', (value) => valid.expirationDate(value).isValid).required('required'),
   }),
   UpdateUserSchema: yup.object().shape({
     firstName: yup.string().test('test-firstName', 'required', (value) => (value && value.trim().length >= 1)).required('required'),
