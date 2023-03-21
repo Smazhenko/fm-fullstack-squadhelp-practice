@@ -9,7 +9,7 @@ const CONSTANTS = require('../constants');
 module.exports.dataForContest = async (req, res, next) => {
   const response = {};
   try {
-    const { body: { characteristic1, characteristic2 } } = req;
+    const { body: { characteristic1, characteristic2 }} = req;
     const types = [characteristic1, characteristic2, 'industry'].filter(Boolean);
 
     const characteristics = await db.Select.findAll({
@@ -37,7 +37,7 @@ module.exports.dataForContest = async (req, res, next) => {
 module.exports.getContestById = async (req, res, next) => {
   try {
     let contestInfo = await db.Contest.findOne({
-      where: { id: req.headers.contestid },
+      where: { id: req.params.contestId },
       order: [
         [db.Offer, 'id', 'asc'],
       ],
@@ -214,10 +214,11 @@ module.exports.setOfferStatus = async (req, res, next) => {
 };
 
 module.exports.getCustomersContests = (req, res, next) => {
+const {limit, offset, status} = req.query;
   db.Contest.findAll({
-    where: { status: req.headers.status, userId: req.tokenData.userId },
-    limit: req.body.limit,
-    offset: req.body.offset ? req.body.offset : 0,
+    where: { status: status, userId: req.tokenData.userId },
+    limit: Number(limit),
+    offset: offset === "undefined" ? 0: offset ,
     order: [['id', 'DESC']],
     include: [
       {

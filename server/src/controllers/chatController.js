@@ -70,7 +70,7 @@ module.exports.addMessage = async (req, res, next) => {
 };
 
 module.exports.getChat = async (req, res, next) => {
-  const participants = [req.tokenData.userId, req.body.interlocutorId];
+  const participants = [req.tokenData.userId, Number(req.params.id)];
   participants.sort(
     (participant1, participant2) => participant1 - participant2);
   try {
@@ -98,7 +98,7 @@ module.exports.getChat = async (req, res, next) => {
     ]);
 
     const interlocutor = await userQueries.findUser(
-      { id: req.body.interlocutorId });
+      { id: Number(req.params.id) });
     res.send({
       messages,
       interlocutor: {
